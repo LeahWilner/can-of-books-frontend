@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
+import { Carousel } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -31,17 +33,32 @@ class App extends React.Component {
   render() {
     console.log(this.state.books);
     let books = this.state.books.map((book) => (
-      <p key={book._id}>
+      <Carousel.Item key={book._id}>
+      <p>
         {book.title} is {book.description}
       </p>
+</Carousel.Item>
     ));
     return (
-      <>
+      <body>
         <header>
           <h1>Good Reads</h1>
         </header>
-        <main>{this.state.books.length > 0 && <>{books}</>}</main>
-      </>
+        <main>
+          {this.state.books.length > 0 && (
+            <Carousel>{books}</Carousel>
+          )}
+        </main>
+
+
+
+
+
+
+
+
+
+      </body>
     );
   }
 }
