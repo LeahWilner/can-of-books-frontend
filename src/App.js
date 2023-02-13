@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import "./App.css";
-import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Carousel } from "react-bootstrap";
+import "./App.css";
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -44,25 +44,20 @@ class App extends React.Component {
         <header>
           <h1>Good Reads</h1>
         </header>
-        <main>
+        <main className="carousel-container">
           {this.state.books.length > 0 ? (
             <Carousel>{books}</Carousel>
           ) : (
             <p>The book collection is empty.</p>
           )}
         </main>
-
-
-
-
-
-
-
-
-
       </body>
-    );
-  }
+  );
+}
 }
 
+
+
 export default App;
+
+
