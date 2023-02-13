@@ -34,10 +34,10 @@ class App extends React.Component {
     console.log(this.state.books);
     let books = this.state.books.map((book) => (
       <Carousel.Item key={book._id}>
-      <p>
-        {book.title} is {book.description}
-      </p>
-</Carousel.Item>
+        <p>
+          {book.title} is {book.description}
+        </p>
+      </Carousel.Item>
     ));
     return (
       <body>
@@ -45,8 +45,10 @@ class App extends React.Component {
           <h1>Good Reads</h1>
         </header>
         <main>
-          {this.state.books.length > 0 && (
+          {this.state.books.length > 0 ? (
             <Carousel>{books}</Carousel>
+          ) : (
+            <p>The book collection is empty.</p>
           )}
         </main>
 
