@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
 import "./App.css";
 // import About from './about.js';
