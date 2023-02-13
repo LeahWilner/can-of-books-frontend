@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
 import "./App.css";
+// import About from './about.js';
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -44,7 +45,7 @@ class App extends React.Component {
         <header>
           <h1>Good Reads</h1>
         </header>
-        <main className="carousel-container">
+        <main>
           {this.state.books.length > 0 ? (
             <Carousel>{books}</Carousel>
           ) : (
