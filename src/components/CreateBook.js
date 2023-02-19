@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
 import BookFormModal from '../components/BookFormModel';
+// import axios from "axios";
 
 class CreateBook extends React.Component {
     constructor(props) {
@@ -29,9 +30,14 @@ class CreateBook extends React.Component {
             <Container className="mt-5">
                 <Button variant="outline-secondary" onClick={
                     () => this.handleShowModal()}>Add Book</Button>
+               
+             
+              
+               
+               
                 <BookFormModal
                     show={this.state.showModal}
-                    onSubmit={this.handleSubmit}
+                    handleBookSubmit={this.props.handleBookSubmit}
                     onHide={this.handleHideModal}
                 />
             </Container>
