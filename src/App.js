@@ -93,7 +93,8 @@ class App extends React.Component {
           {/* <Carousel.Caption> */}
           <h2>{book.title}</h2>
           <p className="book-desc">{book.description}</p>
-          <Button variant="danger" onClick={() => this.deleteBook(book)}>
+          <Button variant="danger" onClick=
+          {() => this.deleteBook(book)}>
             Delete Book
           </Button>
           {/* </Carousel.Caption> */}
