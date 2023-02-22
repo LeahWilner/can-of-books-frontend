@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./css/App.css";
+import "./components/css/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
@@ -60,22 +60,22 @@ class App extends React.Component {
     }
   };
 
-  // deleteBook = async (bookToDelete) => {
-  //   // console.log("we here!", bookToDelete);
-  //   try {
-  //     let url = `${SERVER}/books/${bookToDelete._id}`;
-  //     await axios.delete(url);
-  //     let updatedBooks = this.state.books.filter(
-  //       (book) => book._id !== bookToDelete._id
-  //     );
+  deleteBook = async (bookToDelete) => {
+    // console.log("we here!", bookToDelete);
+    try {
+      let url = `${SERVER}/books/${bookToDelete._id}`;
+      await axios.delete(url);
+      let updatedBooks = this.state.books.filter(
+        (book) => book._id !== bookToDelete._id
+      );
 
-  //     this.setState({
-  //       books: updatedBooks,
-  //     });
-  //   } catch (error) {
-  //     console.log("We have an error: ", error.response.data);
-  //   }
-  // };
+      this.setState({
+        books: updatedBooks,
+      });
+    } catch (error) {
+      console.log("We have an error: ", error.response.data);
+    }
+  };
 
 
   componentDidMount() {
