@@ -3,41 +3,34 @@ import { Container, ListGroup, Button } from "react-bootstrap";
 
 class Books extends React.Component {
 
-    render(){
+    render() {
         console.log(this.props.books);
         let books = this.props.books.map((book) => (
-            <Book book={book} key={book._id} deleteBooks={this.props.deleteBooks}/>
+            <Book book={book} key={book._id} deleteBooks={this.props.deleteBooks} />
         ));
 
-    return(
-        <Container>
-            <ListGroup>{Books}</ListGroup>
-        </Container>
-    );    
+        return (
+            <Container>
+                <ListGroup>{books}</ListGroup>
+            </Container>
+        );
     }
 
 }
 class Book extends Books {
 
-    render(){
+    render() {
         this.return(
             <ListGroup.Item>
-            {this.props.book.title} is {this.props.book.description}
-            <Button 
-            variant= "success"
-            click={()=> {
-                this.props.deleteBooks(this.props.book._id)
-            }}>deleteBook</Button>
+                {this.props.book.title} is {this.props.book.description}
+                <Button
+                    variant="success"
+                    click={() => {
+                        this.props.deleteBooks(this.props.book._id)
+                    }}>deleteBook</Button>
             </ListGroup.Item>
         );
-
-        }
-
-
-
     }
-
-
-
+}
 
 export default Books;

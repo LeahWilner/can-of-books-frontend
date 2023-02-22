@@ -8,7 +8,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import "./components/Books.js";
 import About from "./components/About/About.js";
-import Header from "./components/Header";
+import Header from "./components/Header/Header.js";
 import CreateBook from "./components/CreateBook.js";
 
 
@@ -105,13 +105,9 @@ class App extends React.Component {
     });
     return (
       <>
-
         <Header />
         <section className="section-background">
           <main className="carousel-container">
-
-
-
             {this.state.books.length > 0 ? (
               <Carousel>{books}</Carousel>
             ) : (
@@ -122,7 +118,7 @@ class App extends React.Component {
           {/* <CreateBook /> */}
           <CreateBook handleBookSubmit={this.handleBookSubmit} />
         </section>
-        <About />
+       
       </>
     );
   }
