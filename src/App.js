@@ -91,8 +91,11 @@ class App extends React.Component {
           {/* <Carousel.Caption> */}
           <h2>{book.title}</h2>
           <p className="book-desc">{book.description}</p>
-          <Button variant="danger" onClick=
-            {() => this.deleteBook(book)}>
+          <Button
+            variant="danger" onClick=
+            {() =>
+              this.deleteBook(book)}
+            className='mb-5'>
             Delete Book
           </Button>
           {/* </Carousel.Caption> */}
@@ -109,10 +112,8 @@ class App extends React.Component {
             ) : (
               <p>The book collection is empty.</p>)}
           </main>
-          {/* <CreateBook /> */}
-          <CreateBook handleBookSubmit={this.handleBookSubmit} />
         </section>
-
+        <CreateBook handleBookSubmit={this.handleBookSubmit} />
       </>
     );
   }
