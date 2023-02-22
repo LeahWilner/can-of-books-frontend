@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import "./components/Books.js";
-import "./components/About/About.js";
+import About from "./components/About/About.js";
 import Header from "./components/Header";
 import CreateBook from "./components/CreateBook.js";
 
@@ -56,7 +56,7 @@ class App extends React.Component {
     try {
       let url = `${SERVER}/books`;
       let createdBook = await axios.post(url, newBookObject);
-      console.log("createdBook", createdBook);
+      // console.log("createdBook", createdBook);
       this.setState({
         books: [...this.state.books, createdBook.data],
       });
@@ -66,7 +66,7 @@ class App extends React.Component {
   };
 
   deleteBook = async (bookToDelete) => {
-    console.log("we here!", bookToDelete);
+    // console.log("we here!", bookToDelete);
     try {
       let url = `${SERVER}/books/${bookToDelete._id}`;
       await axios.delete(url);
@@ -122,6 +122,7 @@ class App extends React.Component {
           {/* <CreateBook /> */}
           <CreateBook handleBookSubmit={this.handleBookSubmit} />
         </section>
+        <About />
       </>
     );
   }
