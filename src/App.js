@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
-
-import "./css/app.css";
-
+import "./css/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
@@ -94,7 +92,7 @@ class App extends React.Component {
           <h2>{book.title}</h2>
           <p className="book-desc">{book.description}</p>
           <Button variant="danger" onClick=
-          {() => this.deleteBook(book)}>
+            {() => this.deleteBook(book)}>
             Delete Book
           </Button>
           {/* </Carousel.Caption> */}
@@ -110,9 +108,7 @@ class App extends React.Component {
               <Carousel>{books}</Carousel>
             ) : (
               <p>The book collection is empty.</p>)}
-
           </main>
-
           {/* <CreateBook /> */}
           <CreateBook handleBookSubmit={this.handleBookSubmit} />
         </section>
