@@ -1,15 +1,15 @@
 import React from "react";
 import axios from "axios";
 import Carousel from "react-bootstrap/Carousel";
-import "./App.css";
-import "./books";
+import "./css/App.css";
+import "./components/Books";
 import Button from 'react-bootstrap/Button';
 
 import CreateBook from './components/CreateBook';
 // import Button from 'react-bootstrap/Button';
-import "./components/About.js";
+import "./components/About/About.js";
 // import Nav from "./Nav";
-
+import Header from "./components/Header";
 let SERVER = process.env.REACT_APP_SERVER;
 //add comment
 
@@ -34,10 +34,7 @@ class App extends React.Component {
     }
   };
 
-  handleButtonClick = () => {
-    console.log("Button clicked");
-  };
-  ///////////
+  
   handleBookSubmit = async (event) => {
 
     event.preventDefault();
@@ -89,24 +86,30 @@ class App extends React.Component {
   render() {
     console.log('yyyyyyyy',this.state.books);
 
-    let books = this.state.books.map((book) => (
+    let books = this.state.books.map((book) => {
+      return(
       <Carousel.Item key={book._id}>
         {/* <Carousel.Caption> */}
           <h2>{book.title}</h2>
-          <p>{book.description}</p>
+          <p className="books-des">{book.description}</p>
           <Button variant="danger" onClick={() => this.deleteBook(book)}>Delete Book</Button>
         {/* </Carousel.Caption> */}
       </Carousel.Item>
-
-    ));
+    );
+      });
     return (
       <>
-        <section>
-          <header>
-            <h1>Good Reads</h1>
-          </header>
+       
+          <Header />
+          <section className="section-background">
           <main className="carousel-container">
-            {this.state.books.length > 0 ? (<Carousel>{books}</Carousel>) : (<p>The book collection is empty.</p>)}
+            
+        
+          
+            {this.state.books.length > 0 ? (
+            <Carousel>{books}</Carousel>
+            ) : (
+            <p>The book collection is empty.</p>)}
 
           
 
