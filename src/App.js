@@ -1,15 +1,17 @@
 import React from "react";
 import axios from "axios";
-import Carousel from "react-bootstrap/Carousel";
-import "./css/App.css";
-import "./components/Books";
-import Button from 'react-bootstrap/Button';
 
-import CreateBook from './components/CreateBook';
-// import Button from 'react-bootstrap/Button';
+import "./css/app.css";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from "react-bootstrap/Carousel";
+import Button from "react-bootstrap/Button";
+import "./components/Books.js";
 import "./components/About/About.js";
-// import Nav from "./Nav";
 import Header from "./components/Header";
+import CreateBook from "./components/CreateBook.js";
+
+
 let SERVER = process.env.REACT_APP_SERVER;
 //add comment
 
@@ -34,7 +36,7 @@ class App extends React.Component {
     }
   };
 
-  
+
   handleBookSubmit = async (event) => {
 
     event.preventDefault();
@@ -54,27 +56,29 @@ class App extends React.Component {
     try {
       let url = `${SERVER}/books`;
       let createdBook = await axios.post(url, newBookObject);
-      console.log('createdBook', createdBook);
+      console.log("createdBook", createdBook);
       this.setState({
         books: [...this.state.books, createdBook.data],
       });
     } catch (error) {
-      console.log('We have an error: ', error.response.data);
+      console.log("We have an error: ", error.response.data);
     }
   };
 
   deleteBook = async (bookToDelete) => {
-    console.log('we here!', bookToDelete)
+    console.log("we here!", bookToDelete);
     try {
       let url = `${SERVER}/books/${bookToDelete._id}`;
       await axios.delete(url);
-      let updatedBooks = this.state.books.filter((book) => book._id !== bookToDelete._id);
-      
+      let updatedBooks = this.state.books.filter(
+        (book) => book._id !== bookToDelete._id
+      );
+
       this.setState({
-         books: updatedBooks
-         });
+        books: updatedBooks,
+      });
     } catch (error) {
-      console.log('We have an error: ', error.response.data);
+      console.log("We have an error: ", error.response.data);
     }
   };
 
@@ -84,44 +88,39 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('yyyyyyyy',this.state.books);
+    console.log('yyyyyyyy', this.state.books);
 
     let books = this.state.books.map((book) => {
-      return(
-      <Carousel.Item key={book._id}>
-        {/* <Carousel.Caption> */}
+      return (
+        <Carousel.Item key={book._id}>
+          {/* <Carousel.Caption> */}
           <h2>{book.title}</h2>
-          <p className="books-des">{book.description}</p>
-          <Button variant="danger" onClick={() => this.deleteBook(book)}>Delete Book</Button>
-        {/* </Carousel.Caption> */}
-      </Carousel.Item>
-    );
-      });
+          <p>{book.description}</p>
+          <Button variant="danger" onClick={() => this.deleteBook(book)}>
+            Delete Book
+          </Button>
+          {/* </Carousel.Caption> */}
+        </Carousel.Item>
+      );
+    });
     return (
       <>
-       
-          <Header />
-          <section className="section-background">
-          <main className="carousel-container">
-            
-        
-          
-            {this.state.books.length > 0 ? (
-            <Carousel>{books}</Carousel>
-            ) : (
-            <p>The book collection is empty.</p>)}
 
-          
+        <Header />
+        <section className="section-background">
+          <main className="carousel-container">
+
+
+
+            {this.state.books.length > 0 ? (
+              <Carousel>{books}</Carousel>
+            ) : (
+              <p>The book collection is empty.</p>)}
 
           </main>
 
           {/* <CreateBook /> */}
-          <CreateBook
-            handleBookSubmit={this.handleBookSubmit}
-          />
-
-
-
+          <CreateBook handleBookSubmit={this.handleBookSubmit} />
         </section>
       </>
     );
