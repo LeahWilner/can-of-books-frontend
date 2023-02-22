@@ -25,7 +25,7 @@ class App extends React.Component {
   getBooks = async () => {
     try {
       let results = await axios.get(`${SERVER}/books`);
-      console.log(results);
+      // console.log(results);
       this.setState({
         books: results.data,
       });
@@ -35,30 +35,30 @@ class App extends React.Component {
   };
 
 
-  // handleBookSubmit = async (event) => {
-  // event.preventDefault();
-  //   let newBook = {
-  //     title: event.target.title.value,
-  //     description: event.target.description.value,
-  //     status: event.target.status.checked,
-  //   };
-  // this.postBook(newBook);
-  // };
+  handleBookSubmit = async (event) => {
+  event.preventDefault();
+    let newBook = {
+      title: event.target.title.value,
+      description: event.target.description.value,
+      status: event.target.status.checked,
+    };
+  this.postBook(newBook);
+  };
   ///////////
-  // postBook = async (newBookObject) => {
-  //   console.log("🚀 ~ file: App.js:53 ~ App ~ postBook= ~ newBookObject", newBookObject)
+  postBook = async (newBookObject) => {
+    console.log("🚀 ~ file: App.js:53 ~ App ~ postBook= ~ newBookObject", newBookObject)
 
-  //   try {
-  //     let url = `${SERVER}/books`;
-  //     let createdBook = await axios.post(url, newBookObject);
-  //     // console.log("createdBook", createdBook);
-  //     this.setState({
-  //       books: [...this.state.books, createdBook.data],
-  //     });
-  //   } catch (error) {
-  //     console.log("We have an error: ", error.response.data);
-  //   }
-  // };
+    try {
+      let url = `${SERVER}/books`;
+      let createdBook = await axios.post(url, newBookObject);
+      // console.log("createdBook", createdBook);
+      this.setState({
+        books: [...this.state.books, createdBook.data],
+      });
+    } catch (error) {
+      console.log("We have an error: ", error.response.data);
+    }
+  };
 
   // deleteBook = async (bookToDelete) => {
   //   // console.log("we here!", bookToDelete);
