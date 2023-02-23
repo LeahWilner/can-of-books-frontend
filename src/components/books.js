@@ -17,18 +17,21 @@ class Books extends React.Component {
     }
 
 }
-class Book extends Books {
+// class Book extends Books {
+
+class Book extends React.Component {
 
     render() {
-        this.return(
+        return(
             <ListGroup.Item>
                 {this.props.book.title} is {this.props.book.description}
                 <Button
                     variant="success"
-                    click={() => {
-                        this.props.deleteBooks(this.props.book._id);
+                    onClick={() => {
+                        // this.props.deleteBooks(this.props.book._id);
+                        this.props.deleteBook(this.props.book._id);
                     }}
-                    >deleteBook
+                    >Delete Book
                     </Button>
             </ListGroup.Item>
         );

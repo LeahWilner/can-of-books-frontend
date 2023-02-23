@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
 import "./components/css/App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
-import "./components/Books.js";
+import import Books from "./components/Books";
 // import About from "./components/About/About.js";
 import Header from "./components/Header/Header.js";
 import CreateBook from "./components/CreateBook.js";
@@ -86,7 +86,7 @@ class App extends React.Component {
     console.log(this.state.books)
 
     let books = this.state.books.map((book) => {
-      return (
+     return (
         <Carousel.Item key={book._id}>
           {/* <Carousel.Caption> */}
           <h2>{book.title}</h2>
@@ -114,6 +114,8 @@ class App extends React.Component {
           </main>
         </section>
         <CreateBook handleBookSubmit={this.handleBookSubmit} />
+        {/*  */}
+        <Books books={this.state.books} deleteBook={this.deleteBook} />
       </>
     );
   }
