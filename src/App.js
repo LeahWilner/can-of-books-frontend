@@ -4,7 +4,7 @@ import "./components/css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
-import import Books from "./components/Books";
+import Books from "./components/Books";
 // import About from "./components/About/About.js";
 import Header from "./components/Header/Header.js";
 import CreateBook from "./components/CreateBook.js";
