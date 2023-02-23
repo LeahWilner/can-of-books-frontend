@@ -26,8 +26,10 @@ class Book extends Books {
                 <Button
                     variant="success"
                     click={() => {
-                        this.props.deleteBooks(this.props.book._id)
-                    }}>deleteBook</Button>
+                        this.props.deleteBooks(this.props.book._id);
+                    }}
+                    >deleteBook
+                    </Button>
             </ListGroup.Item>
         );
     }
