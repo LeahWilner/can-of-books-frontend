@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Books from "./components/Books";
-// import About from "./components/About/About.js";
 import Header from "./components/Header/Header.js";
 import CreateBook from "./components/CreateBook.js";
 
@@ -113,7 +112,9 @@ class App extends React.Component {
               <p>The book collection is empty.</p>)}
           </main>
         </section>
+        <footer>
         <CreateBook handleBookSubmit={this.handleBookSubmit} />
+        </footer>
         {/*  */}
         <Books books={this.state.books} deleteBook={this.deleteBook} />
       </>
