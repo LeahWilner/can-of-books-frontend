@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Books from "./components/Books";
 import Header from "./components/Header/Header.js";
 import CreateBook from "./components/CreateBook.js";
+// import { Container } from "react-dom";
 
 
 let SERVER = process.env.REACT_APP_SERVER;
@@ -87,17 +88,20 @@ class App extends React.Component {
     let books = this.state.books.map((book) => {
      return (
         <Carousel.Item key={book._id}>
-          {/* <Carousel.Caption> */}
+     
           <h2>{book.title}</h2>
           <p className="book-desc">{book.description}</p>
+          <div className="carousel-footer">
+            <>
           <Button
-            variant="danger" onClick=
+              variant="danger" className="deleteButton" onClick=
             {() =>
-              this.deleteBook(book)}
-            className='mb-5'>
+              this.deleteBook(book)}>
             Delete Book
           </Button>
-          {/* </Carousel.Caption> */}
+          </>
+          </div>
+         
         </Carousel.Item>
       );
     });

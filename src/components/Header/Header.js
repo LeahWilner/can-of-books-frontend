@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Navbar, Nav } from "react-bootstrap";
-// import "./src/components/Header/Header.css";
+import "./Header.css";
 
 
 
@@ -16,10 +16,14 @@ class Header extends React.Component {
         {/* <Navbar.Brand href="#home">Good Reads</Navbar.Brand> */}
           <Nav className="navigation">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About Us</Nav.Link>
+            <Nav.Link href="./About">About Us</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
+      <div id="about">
+          <>
+          </>
+        </div>
   
       </>
     );

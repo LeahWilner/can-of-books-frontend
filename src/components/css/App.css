@@ -1,13 +1,13 @@
-/* body {
-  margin: 0;
-  padding: 0;
-  background-color: rgb(45, 76, 66);
-  
-} */
+
 
 .section-background {
   background-color: rgb(45, 76, 66);
   
+}
+.deleteButton {
+  display:flex;
+  justify-content: end;
+  align-items: end;
 }
 
 header {
@@ -27,9 +27,9 @@ footer {
   justify-content: center;
 }
 .carouselslide{
-  display: flex;
+  /* display: flex; */
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
   height: 100vh;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
@@ -41,18 +41,33 @@ footer {
   text-align: center;
 
 }
+.carousel-footer {
+  position: relative;
+}
 
-/* .add-button { */
-    /* padding-bottom: 20px; */
-    /* border-radius: 5px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    
-  
-/* } */
-
+.delete-button {
+  position: absolute;
+  bottom: 0;
+}
 
 
+
+.carousel .slide.carousel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel .slide.carousel-footer p {
+  margin: 0;
+}
 
 /* .carousel-inner {
 
@@ -97,6 +112,7 @@ footer {
   background-color: #999;
   cursor: pointer;
 }
+
 .book-desc{
   margin-bottom: 50px;
 }

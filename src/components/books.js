@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, ListGroup, Button } from "react-bootstrap";
+import { Container, ListGroup } from "react-bootstrap";
 
 class Books extends React.Component {
 
@@ -23,17 +23,9 @@ class Book extends React.Component {
 
     render() {
         return (
-            <ListGroup.Item>
-                {this.props.book.title} is {this.props.book.description}
-                <Button
-                    variant="success"
-                    onClick={() => {
-                        // this.props.deleteBooks(this.props.book._id);
-                        this.props.deleteBook(this.props.book._id);
-                    }}
-                >Delete Book
-                </Button>
-            </ListGroup.Item>
+            <>
+            </>
+            
         );
     }
 }

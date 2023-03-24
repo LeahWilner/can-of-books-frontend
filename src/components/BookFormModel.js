@@ -35,6 +35,9 @@ class BookFormModal extends React.Component {
               <Form.Group controlId="status">
                 <Form.Check type="checkbox" label="available" />
               </Form.Group>
+              <Modal.Footer Footer className="modal-footer" >
+              <Button variant="outline-secondary" type="submit" className="">Add Books</Button>
+             </Modal.Footer >
               {/* <Button variant="outline-secondary" type="submit">Add Books</Button> */}
             </Form>
 
