@@ -1,37 +1,42 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import { Container } from 'react-bootstrap';
-import BookFormModal from '../components/BookFormModel';
+import React from "react";
+import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
+import BookFormModal from "../components/BookFormModel";
+
 
 class CreateBook extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
         };
     }
 
     handleShowModal = () => {
-        this.setState({ showModal: true });
-    }
-
+        this.setState({
+            showModal: true
+        });
+    };
     handleHideModal = () => {
-        this.setState({ showModal: false });
-    }
-
+        this.setState({
+            showModal: false
+        });
+    };
     handleSubmit = (book) => {
-        // Call the parent component's onSubmit function with the book object
         this.props.onSubmit(book);
-    }
+    };
 
     render() {
         return (
             <Container className="mt-5">
-                <Button variant="outline-secondary" onClick={
+                <footer>
+                <Button variant="secondary" className="add-button" onClick={
                     () => this.handleShowModal()}>Add Book</Button>
+                    </footer>
                 <BookFormModal
                     show={this.state.showModal}
-                    onSubmit={this.handleSubmit}
+                    handleBookSubmit=
+                    {this.props.handleBookSubmit}
                     onHide={this.handleHideModal}
                 />
             </Container>

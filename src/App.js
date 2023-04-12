@@ -1,15 +1,18 @@
 import React from "react";
 import axios from "axios";
+import "./components/css/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
-import "./App.css";
-import "./books";
+import Button from "react-bootstrap/Button";
+import Books from "./components/Books.js";
+import Header from "./components/Header/Header.js";
+import CreateBook from "./components/CreateBook.js";
+// import { Container } from "react-dom";
 
-import CreateBook from './components/CreateBook';
-// import Button from 'react-bootstrap/Button';
-import "./components/About.js";
-// import Nav from "./Nav";
 
 let SERVER = process.env.REACT_APP_SERVER;
+//add comment
+
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +25,7 @@ class App extends React.Component {
   getBooks = async () => {
     try {
       let results = await axios.get(`${SERVER}/books`);
-      console.log("results from API", results);
+      // console.log(results);
       this.setState({
         books: results.data,
       });
@@ -30,44 +33,47 @@ class App extends React.Component {
       console.log("error found: ", error.response.data);
     }
   };
-  handleButtonClick = () => {
-    console.log("Button clicked");
-  };
+
 
   handleBookSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
     let newBook = {
       title: event.target.title.value,
       description: event.target.description.value,
-      status: event.target.status.value,
+      status: event.target.status.checked,
     };
-    console.log(newBook);
-    this.postBook(newBook);
+  this.postBook(newBook);
   };
-
+  ///////////
   postBook = async (newBookObject) => {
+    console.log("🚀 ~ file: App.js:53 ~ App ~ postBook= ~ newBookObject", newBookObject)
+
     try {
       let url = `${SERVER}/books`;
       let createdBook = await axios.post(url, newBookObject);
-      console.log('createdBook', createdBook);
+      // console.log("createdBook", createdBook);
       this.setState({
         books: [...this.state.books, createdBook.data],
       });
     } catch (error) {
-      console.log('We have an error: ', error.response.data);
+      console.log("We have an error: ", error.response.data);
     }
   };
 
-  deleteBook = async (id) => {
+  deleteBook = async (bookToDelete) => {
+    // console.log("we here!", bookToDelete);
     try {
-      let url = `${SERVER}/books/${id}`;
+      let url = `${SERVER}/books/${bookToDelete._id}`;
       await axios.delete(url);
-      let updatedBooks = this.state.books.filter((book) =>
-        book._id !== id
+      let updatedBooks = this.state.books.filter(
+        (book) => book._id !== bookToDelete._id
       );
-      this.setState({ books: updatedBooks })
+
+      this.setState({
+        books: updatedBooks,
+      });
     } catch (error) {
-      console.log('We have an error: ', error.response.data);
+      console.log("We have an error: ", error.response.data);
     }
   };
 
@@ -77,38 +83,44 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.books);
+    console.log(this.state.books)
 
-    let books = this.state.books.map((book) => (
-      <Carousel.Item key={book._id}>
-        <p>
-          {book.title} is {book.description}
-        </p>
-      </Carousel.Item>
-    ));
+    let books = this.state.books.map((book) => {
+     return (
+        <Carousel.Item key={book._id}>
+     
+          <h2>{book.title}</h2>
+          <p className="book-desc">{book.description}</p>
+          <div className="carousel-footer">
+            <>
+          <Button
+              variant="danger" className="deleteButton" onClick=
+            {() =>
+              this.deleteBook(book)}>
+            Delete Book
+          </Button>
+          </>
+          </div>
+         
+        </Carousel.Item>
+      );
+    });
     return (
       <>
-        <section>
-          <header>
-            <h1>Good Reads</h1>
-          </header>
+        <Header />
+        <section className="section-background">
           <main className="carousel-container">
             {this.state.books.length > 0 ? (
               <Carousel>{books}</Carousel>
             ) : (
-              <p>The book collection is empty.</p>
-            )}
-
-
-
+              <p>The book collection is empty.</p>)}
           </main>
-
-          {/* <CreateBook /> */}
-          <CreateBook handleBookSubmit={this.handleBookSubmit} />
-
-
-
         </section>
+        <footer>
+        <CreateBook handleBookSubmit={this.handleBookSubmit} />
+        </footer>
+        {/*  */}
+        <Books books={this.state.books} deleteBook={this.deleteBook} />
       </>
     );
   }
