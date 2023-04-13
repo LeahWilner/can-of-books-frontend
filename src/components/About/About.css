@@ -28,3 +28,8 @@ background-color: gray;
   background-size: cover;
   height: 100vh;
 }
+h1 {
+  color: rgb(42, 63, 42);
+  text-align: center;
+
+}
