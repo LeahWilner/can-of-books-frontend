@@ -12,12 +12,22 @@ nav {
 
 }
 
+body {
+background-color: gray;
+}
+.Card {
+  display: flex;
+  /* flex-direction: row; */
+}
 
-
-
-.aboutUs{
-    background-image: url('/images/bgBook.png');
-    background-size: cover;
-    height: 100vh;
-
+ .bgAbout {
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  height: 100vh;
+} 
+.bgAbout {
+  background-image: ('./images/bgBooks.png');
+  background-size: cover;
+  height: 100vh;
 }

@@ -93,8 +93,18 @@
   background-color: #999;
   cursor: pointer;
 }
+footer {
+  background-color: rgb(45, 76, 66);
+  display: flex;
+  justify-content: center;
+  margin: 0% !important;
+  margin: 0 auto;
+} 
 
 
-.mt-5 container {
-
+.delete-button {
+  position: absolute;
+  bottom: 0;
 }
+
+
