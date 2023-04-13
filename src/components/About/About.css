@@ -17,17 +17,14 @@ background-color: gray;
 }
 .Card {
   display: flex;
-  /* flex-direction: row; */
+  justify-content: space-around;
 }
 
- .bgAbout {
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  height: 100vh;
-} 
-.bgAbout {
-  background-image: ('./images/bgBooks.png');
+  
+ 
+.aboutUs {
+  padding: 100px;
+  background-image: url('./images/bgBooks.png');
   background-size: cover;
   height: 100vh;
 }
