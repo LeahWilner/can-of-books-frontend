@@ -11,3 +11,13 @@ nav {
   background-color: rgb(45, 76, 66);
 
 }
+
+
+
+
+.aboutUs{
+    background-image: url('/images/bgBook.png');
+    background-size: cover;
+    height: 100vh;
+
+}

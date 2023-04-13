@@ -1,7 +1,10 @@
-
+#body {
+  background-color: rgb(45, 76, 66);
+}
 
 .section-background {
   background-color: rgb(45, 76, 66);
+  
   
 }
 .deleteButton {
@@ -21,29 +24,12 @@ header {
   background-color: rgb(45, 76, 66);
 
 }
-footer {
+/* footer {
   background-color: rgb(45, 76, 66);
   display: flex;
   justify-content: center;
-}
-.carouselslide{
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  height: 100vh;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  height: 700px;
-  width: 700px;
-  margin: 0 auto;
-  margin-top: 10px;
- 
-  text-align: center;
+} */
 
-}
-.carousel-footer {
-  position: relative;
-}
 
 .delete-button {
   position: absolute;
@@ -52,18 +38,7 @@ footer {
 
 
 
-.carousel .slide.carousel-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .carousel .slide.carousel-footer p {
   margin: 0;
@@ -77,7 +52,8 @@ footer {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  height: 100vh;
+  height: 40vh;
+  width: 40vw;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   height: 700px;
@@ -88,7 +64,7 @@ footer {
   background-color: #ddd;
   border-radius: 10px;
   padding: 20px;
-  padding-top: 60px;
+  /* padding-top: 60px; */
   
 }
 
@@ -113,7 +89,10 @@ footer {
   cursor: pointer;
 }
 
-.book-desc{
+/* .book-desc{
   margin-bottom: 50px;
-}
+} */
 
+.mt-5 container {
+
+}

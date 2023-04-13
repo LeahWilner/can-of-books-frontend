@@ -15,15 +15,16 @@ class Header extends React.Component {
         <Container>
         {/* <Navbar.Brand href="#home">Good Reads</Navbar.Brand> */}
           <Nav className="navigation">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="./About">About Us</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="/books">Books</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-      <div id="about">
+      {/* <div id="about">
           <>
           </>
-        </div>
+        </div> */}
   
       </>
     );

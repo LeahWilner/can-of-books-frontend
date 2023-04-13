@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.js';
 import About from './components/About/About.js';
-import Header from './components/Header/Header.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
@@ -10,13 +9,15 @@ import {
   RouterProvider,
   Route
 } from 'react-router-dom';
+import BestBooks from './components/BestBooks.js';
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} >
+      <Route index element={<BestBooks />} />
+      <Route path='/books' element={<BestBooks />} />
       <Route path="about" element={<About />} />
-      <Route path="header" element={<Header />} />
     </Route>
   )
 );

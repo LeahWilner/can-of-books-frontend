@@ -1,0 +1,100 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 40vh;
+  width: 40vw;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 60px;
+  overflow: hidden;
+  
+}
+.carouselslide {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 90vh;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  height: 700px;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+.carousel-footer {
+  position: relative;
+}
+.carousel .slide.carousel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .slide.carousel-footer p {
+  margin: 0;
+}
+
+/* .carousel-inner {
+
+} */
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 40vh;
+  width: 40vw;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  height: 700px;
+  width: 700px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  /* padding-top: 60px; */
+  
+}
+
+/* .carousel-control-prev,
+.carousel-control-next {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  margin-top: 0%;
+  background-color: #a39e9e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #000;
+} */
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #999;
+  cursor: pointer;
+}
+
+
+.mt-5 container {
+
+}
