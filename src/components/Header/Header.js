@@ -13,7 +13,7 @@ class Header extends React.Component {
       <header>Good Reads</header>
       <Navbar bg="dark" variant="dark" className="nav">
         <Container>
-        {/* <Navbar.Brand href="#home">Good Reads</Navbar.Brand> */}
+    
           <Nav className="navigation">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About Us</Nav.Link>
@@ -21,11 +21,7 @@ class Header extends React.Component {
           </Nav>
         </Container>
       </Navbar>
-      {/* <div id="about">
-          <>
-          </>
-        </div> */}
-  
+     
       </>
     );
   }

@@ -110,9 +110,7 @@ class BestBooks extends React.Component {
       <>
        
         <Outlet/>
-        {/* <footer>
-        <CreateBook handleBookSubmit={this.handleBookSubmit} />
-        </footer> */}
+        
          <section className="section-background">
           <main className="carousel-container">
             {this.state.books.length > 0 ? (
