@@ -30,9 +30,9 @@ class CreateBook extends React.Component {
         return (
             <Container className="mt-5">
                 <footer>
-                <Button variant="secondary" className="add-button" onClick={
-                    () => this.handleShowModal()}>Add Book</Button>
-                    </footer>
+                    <Button variant="secondary" className="add-button" onClick={
+                        () => this.handleShowModal()}>Add Book</Button>
+                </footer>
                 <BookFormModal
                     show={this.state.showModal}
                     handleBookSubmit=
