@@ -23,8 +23,8 @@ class About extends React.Component {
             <Card.Body>
               <Card.Title>Susan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Although my background is in fine art, I have always been interested in technology. I decided to pursue a career in software development as I believe my creativity and problem-solving skills, honed through my fine art training, will be valuable assets in this field.
+
               </Card.Text>
             </Card.Body>
           </Card>
@@ -33,8 +33,7 @@ class About extends React.Component {
             <Card.Body>
               <Card.Title>Leah</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              I am a Digital Marketer and Software Developer. I am passionate about helping people and working on meaningful projects.
               </Card.Text>
             </Card.Body>
           </Card>

@@ -12,3 +12,18 @@
 header {
   background-color: rgb(45, 76, 66); 
 }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  color: #ddd;
+  padding-top: 1rem;
+  background-color: rgb(45, 76, 66);
+
+}
+
+
+
