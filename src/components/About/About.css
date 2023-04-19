@@ -23,7 +23,7 @@ background-color: gray;
   
  
 .aboutUs {
-  padding: 100px;
+  /* padding: 10px; */
   background-image: url('./images/bgBooks.png');
   background-size: cover;
   height: 100vh;
