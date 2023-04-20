@@ -5,7 +5,7 @@ class Books extends React.Component {
 
     render() {
         console.log(this.props.books);
-        let books = this.props.books.map((book) => (
+        const books = this.props.books.map((book) => (
             <Book book={book} key={book._id} deleteBooks={this.props.deleteBooks} />
         ));
 

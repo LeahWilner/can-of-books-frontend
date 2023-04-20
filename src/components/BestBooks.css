@@ -115,6 +115,6 @@ footer {
 
 .section-background {
   display: flex;
-  background-image: url('../components/About/images/bgCan.jpeg');
+  background-image: url('../components/About/images/bgCan.jpeg'); 
   
 }
