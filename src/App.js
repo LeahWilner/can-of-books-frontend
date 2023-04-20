@@ -9,7 +9,7 @@ import { Outlet } from "react-router-dom";
 // import { Container } from "react-dom";
 
 
-let SERVER = process.env.REACT_APP_SERVER;
+// let SERVER = process.env.REACT_APP_SERVER;
 //add comment
 
 

@@ -8,6 +8,7 @@ import Books from "./Books.js";
 import CreateBook from "./CreateBook.js";
 import { Outlet } from "react-router-dom";
 import './BestBooks.css';
+import owl from "./About/images/owl.png";
 // import { Container } from "react-dom";
 
 
@@ -88,6 +89,7 @@ class BestBooks extends React.Component {
 
     let books = this.state.books.map((book) => {
      return (
+      
         <Carousel.Item key={book._id}>
      
           <h2>{book.title}</h2>
@@ -112,12 +114,14 @@ class BestBooks extends React.Component {
         <Outlet/>
         
          <section className="section-background">
+         <img src={owl} alt="block print of owl" width='20%'/>
           <main className="carousel-container">
             {this.state.books.length > 0 ? (
               <Carousel>{books}</Carousel>
             ) : (
               <p>The book collection is empty.</p>)}
           </main>
+          <img src={owl} alt="block print of owl" width='20%'/>
         </section> 
          <footer>
         <CreateBook handleBookSubmit={this.handleBookSubmit} />
