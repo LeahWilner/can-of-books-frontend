@@ -6,12 +6,12 @@
   right: 0;
   text-align: center;
   /* padding: 20px; */
-  background-color: rgb(45, 76, 66);
+  background-color: zrgb(16, 26, 23);
 }
 
-header {
-  background-color: rgb(45, 76, 66); 
-}
+/* header {
+  background-color: rgb(23, 41, 35); 
+} */
 
 header {
   display: flex;
@@ -21,7 +21,7 @@ header {
   font-size: 60px;
   color: #ddd;
   padding-top: 3rem;
-  background-color: rgb(45, 76, 66);
+  background-color: rgb(46, 67, 59);
 
 }
 

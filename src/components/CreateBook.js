@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import BookFormModal from "../components/BookFormModel";
-
+import './CreateBooks.css';
 
 class CreateBook extends React.Component {
     constructor(props) {
