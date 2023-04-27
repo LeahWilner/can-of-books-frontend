@@ -17,7 +17,7 @@ class Books extends React.Component {
     }
 
 }
-// class Book extends Books {
+
 
 class Book extends React.Component {
 

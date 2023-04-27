@@ -13,11 +13,17 @@ nav {
 }
 
 body {
-background-color: gray;
+background-color: rgb(29, 27, 27);
 }
 .Card {
+  padding-top: 3%;
   display: flex;
   justify-content: space-around;
+  
+}
+.card {
+  border: 10px solid;
+  border-color: rgb(41, 40, 40);
 }
 
   
@@ -27,9 +33,10 @@ background-color: gray;
   background-image: url('./images/bgBooks.png');
   background-size: cover;
   height: 100vh;
+  background-color: rgb(40, 88, 70);
 }
 h1 {
-  color: rgb(42, 63, 42);
+  color: gray;
   text-align: center;
 
 }

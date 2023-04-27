@@ -10,7 +10,7 @@
   margin: 0 auto;
   font-size: 20px;
   text-align: center;
-  background-color: #ddd;
+  background-color: #fad05c;
   border-radius: 10px;
   padding: 20px;
   padding-top: 60px;
@@ -43,7 +43,7 @@
   right: 0;
   height: 50px;
   background-color: #333;
-  color: white;
+  color: #fdeabb;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@
   margin: 0 auto;
   font-size: 20px;
   text-align: center;
-  background-color: #ddd;
+  background-color: #fdeabb;
   border-radius: 10px;
   padding: 20px;
   /* padding-top: 60px; */
@@ -83,7 +83,7 @@
   width: 100px;
   position: fixed;
   margin-top: 0%;
-  background-color: #a39e9e;
+  background-color: #0b0b0b;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -94,12 +94,12 @@
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background-color: #999;
+  background-color: #fee8ae;
   cursor: pointer;
 }
 
 footer {
-  background-color: rgb(22, 23, 22);
+  background-color: rgb(21, 26, 24);
   display: flex;
   justify-content: center;
   margin: 0px !important;
